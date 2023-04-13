@@ -16,34 +16,51 @@ class _HomeState extends State {
   final List _children = [
     const PlaceholderWidget(Colors.white),
     const PlaceholderWidget(Colors.purple),
-    const PlaceholderWidget(Colors.indigo)
+    const PlaceholderWidget(Colors.indigo),
+    const PlaceholderWidget(Colors.orange),
+    const PlaceholderWidget(Colors.brown)
   ];
-
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Carona IF', style: Colors.black),
-        backgroundColor: const Color(0xfff4f4f4),
+        title: const Text('Carona IF', selectionColor: Colors.white),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.bottomLeft,
+              colors: <Color>[Color(0xff17882c) , Color(0xff00510f)]),
+          ),
+        ),
       ),
       body: _children[_currentIndex], // new
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: const Color(0xff333333),
         onTap: onTabTapped, // new
         currentIndex: _currentIndex, // new
         items: const[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.home, color: Color(0xff333333),),
+            label: "home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.directions_car),
+            icon: Icon(Icons.directions_car, color: Color(0xff333333),),
             label: 'Caronas',
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+            icon: Icon(Icons.menu, color: Color(0xff333333),),
+            label: 'Menu',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person, color: Color(0xff333333),),
               label: 'Perfil'
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.chat_bubble_outline, color: Color(0xff333333),),
+              label: 'Contato'
           )
         ],
       ),
