@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ContatoPage extends StatefulWidget {
-  const ContatoPage({super.key});
+class Contato extends StatefulWidget {
+  const Contato({super.key});
 
   @override
   State createState() {
@@ -14,10 +14,18 @@ class _ContatoState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Entre em contato"),
+      appBar: AppBar(centerTitle: true,
+        title: const Text('Entre em contato', selectionColor: Colors.white),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.bottomLeft,
+              colors: <Color>[Color(0xff17882c) , Color(0xff00510f)]),
+          ),
+        ),
       ),
-      body: const Text("Hello Contato page!")
+      body: const Text("Hello Contato page!"),
     );
   }
 }

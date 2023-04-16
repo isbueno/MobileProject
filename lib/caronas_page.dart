@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CaronaPage extends StatefulWidget {
-  const CaronaPage({super.key});
+class Carona extends StatefulWidget {
+  const Carona({super.key});
 
   @override
   State createState() {
@@ -15,9 +15,18 @@ class _CaronaState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pesquise por caronas!"),
+        centerTitle: true,
+        title: const Text('Caronas', selectionColor: Colors.white),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              end: Alignment.bottomLeft,
+              colors: <Color>[Color(0xff17882c) , Color(0xff00510f)]),
+          ),
       ),
-      body: const Text("Hello Search page!")
+    ),
+    body: const Text("Hello Search page!"),
     );
   }
 }

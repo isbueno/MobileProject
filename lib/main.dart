@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/menu_page.dart';
 import 'home_page.dart';
 import 'caronas_page.dart';
 import 'perfil_page.dart';
@@ -32,15 +33,15 @@ class MainPageState extends State<MainPage>{
   late int currentIndex = 0;
   final screens = [
     const Home(),
-    const CaronaPage(),
-    const PerfilPage(),
-    const ContatoPage(),
+    const Carona(),
+    const Menu(),
+    const Perfil(),
+    const Contato(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: screens[currentIndex], // new
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: const Color(0xff333333),
@@ -54,6 +55,10 @@ class MainPageState extends State<MainPage>{
           BottomNavigationBarItem(
             icon: Icon(Icons.directions_car, color: Color(0xff333333),),
             label: 'Caronas',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.menu, color: Color(0xff333333),),
+              label: 'Menu'
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person, color: Color(0xff333333),),
