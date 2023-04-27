@@ -21,35 +21,50 @@ class _ContatoState extends State {
             gradient: LinearGradient(
               begin: Alignment.bottomRight,
               end: Alignment.bottomLeft,
-              colors: <Color>[Color(0xff17882c) , Color(0xff00510f)]),
+              colors: <Color>[Color(0xff294656) , Color(0xff294656)]),
           ),
         ),
       ),
-      body: Container(
-        color: const Color(0xfff4f4f4),
-        height: 200,
+      body: SingleChildScrollView(
+        child: Container(
+        color: const Color(0xffffffff),
+        height: 400,
         width: double.infinity,
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Padding(padding: EdgeInsets.only(left: 20.0),
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children:  [
+                Padding(padding: const EdgeInsets.only(top: 20.0, bottom: 10.0, left: 20, right: 20),
                   child: 
-                    Text('Entre em contato conosco!',
-                      style: TextStyle(fontSize: 30, color: Color(0xff1d1d1d), fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.left,
-                     )
+                  RichText(
+                    text: const TextSpan(
+                      text: 'Entre em ',
+                      style: TextStyle(fontSize: 30, color: Color(0xff1B2E35), fontWeight: FontWeight.bold),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: 'contato!',
+                          style: TextStyle(fontSize: 30, color: Color(0xff5AE4A8)),
+                        ),
+                      ],
+                    ),
+                  )
                 ),
-                Padding(padding: EdgeInsets.only(left: 20.0),
+                const Padding(padding: EdgeInsets.only(bottom: 10.0, left: 20, right: 20),
                   child:
-                    Text('Estamos ansiosos para ouvir de você e ajudá-lo em tudo o que precisar. Envie-nos uma mensagem e entraremos em contato o mais breve possível.',
-                      style: TextStyle( fontSize: 16, color: Color(0xff1d1d1d),),
-                      textAlign: TextAlign.left,
+                    Text('Estamos ansiosos para saber o que você tem a dizer. Envie-nos uma mensagem e entraremos em contato assim que possível.',
+                      style: TextStyle( fontSize: 16, color: Color(0xff7a7a7a),),
+                      textAlign: TextAlign.center,
                     ),
                 ),
+                const Expanded(child: 
+                  SizedBox(
+                      child: Image(image: AssetImage('../imagens/entre-em-contato.jpg'), fit: BoxFit.contain)
+                    )
+                  ),                
               ],
             ),
           ),
-      );
+      )
+    );
   }
 }
