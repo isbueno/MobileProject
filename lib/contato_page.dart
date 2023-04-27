@@ -25,7 +25,31 @@ class _ContatoState extends State {
           ),
         ),
       ),
-      body: const Text("Hello Contato page!"),
-    );
+      body: Container(
+        color: const Color(0xfff4f4f4),
+        height: 200,
+        width: double.infinity,
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Padding(padding: EdgeInsets.only(left: 20.0),
+                  child: 
+                    Text('Entre em contato conosco!',
+                      style: TextStyle(fontSize: 30, color: Color(0xff1d1d1d), fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.left,
+                     )
+                ),
+                Padding(padding: EdgeInsets.only(left: 20.0),
+                  child:
+                    Text('Estamos ansiosos para ouvir de você e ajudá-lo em tudo o que precisar. Envie-nos uma mensagem e entraremos em contato o mais breve possível.',
+                      style: TextStyle( fontSize: 16, color: Color(0xff1d1d1d),),
+                      textAlign: TextAlign.left,
+                    ),
+                ),
+              ],
+            ),
+          ),
+      );
   }
 }
